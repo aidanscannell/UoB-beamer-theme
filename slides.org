@@ -1,0 +1,143 @@
+#+TITLE:     Title of Presentation
+#+AUTHOR:    Aidan Scannell
+#+EMAIL:     aidan.scannell@bristol.ac.uk
+#+DATE:      Date of Presentation
+#+LATEX_HEADER: \institute{PhD Researcher \newline University of Bristol | Bristol Robotics Laboratory | University of the West of England}
+
+* General Config :noexport:
+General configuration for UoB presentation, which shouldn't need changing.
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+startup: beamer
+** Class :noexport:
+#+LaTeX_CLASS: beamer
+Possible aspect ratios are 16:9, 16:10, 14:9, 5:4, 4:3 (default) and 3:2
+(Remember to remove the colon, i.e., 16:9 becomes the option 169)
+#+LaTeX_CLASS_OPTIONS: [aspectratio=169]
+** Frame Level :noexport:
+#+BEAMER_FRAME_LEVEL: 2
+** Options :noexport:
+#+OPTIONS:   H:1 num:t toc:nil \n:nil ::t |:t ^:t -:t f:t *:t <:t t:nil
+#+OPTIONS:   TeX:t LaTeX:t
+# #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+# #+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:https://orgmode.org/org-info.js
+** Theme :noexport:
+#+BEAMER_THEME: UoB
+
+* Title Page
+:PROPERTIES:
+:BEAMER_env: fullframe
+:BEAMER_OPT: rightcolor=DarkPink,div=0.8\paperwidth
+:END:
+# :BEAMER_OPT: leftcolor=BrightPurple,rightcolor=DarkPink,div=0.8\paperwidth
+# All standard University of Bristol colours are available:
+#   UniversityRed, CoolGrey, BrightAqua, BrightBlue, BrightOrange, BrightPurple,
+#   BrightPink, BrightLime, DarkAqua, DarkBlue, DarkOrange, DarkPurple,
+#   DarkPink, DarkLime
+#+begin_export latex
+ \titlepage
+#+end_export
+
+* Introduction
+:PROPERTIES:
+:BEAMER_OPT: leftcolor=BrightLime,rightcolor=DarkLime,div=0.8\paperwidth
+:END:
+** A block
+This slide consists of some text with a number of bullet points:
+
+#+ATTR_BEAMER: :overlay +-
+- the first, very @important@, point!
+- the previous point shows the use of the special markup which
+  translates to the Beamer specific /alert/ command for highlighting
+  text.
+
+The above list could be numbered or any other type of list and may
+include sub-lists.
+
+* Slide Title
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprebhenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#+begin_export latex
+\begin{equation*}
+ \int_{-\infty}^{\infty}\mathrm{e}^{-x^2}\mathrm{d}x
+\end{equation*}
+#+end_export
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
+
+* Blocks/Theorems/Definitions
+:PROPERTIES:
+:BEAMER_env: fullframe
+:END:
+This is a slide with no title but with something important on it\ldots
+** A block
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
+
+** My theorem :B_theorem:
+:PROPERTIES:
+:BEAMER_env: theorem
+:END:
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat.
+** Prime number :B_definition:
+:PROPERTIES:
+:BEAMER_env: definition
+:END:
+A prime number is a natural number greater than 1 that has no positive divisors
+other than 1 and itself.
+
+# * Ignore Title :B_ignoreheading:
+* Plain Slide
+:PROPERTIES:
+:BEAMER_env: fullframe
+:END:
+A plain slide that might be useful for displaying large figures
+
+* Some bullet points (with an image!)
+#   \rightimage{\includegraphics[trim=0 0 20mm 0,clip,height=\paperheight]{WillsMemorialBuilding.jpg}}
+# #+NAME:
+# #+ATTR_LATEX: :width 1.\textwidth :placement [h] :center nil
+# #+caption: My catptio
+# [[file:WillsMemorialBuilding.jpg]]
+Use a better quality image though...
+
+- @@beamer:<2->@@ Item 1
+- @@beamer:<1->@@ Item 2
+
+#+ATTR_BEAMER: :overlay +-
+- These will get revealed one by one
+  - Indented bullets
+  - Some more indented bullets
+- Another bullet point
+- Yet another bullet point
+
+* Another smaller image
+:PROPERTIES:
+:BEAMER_OPT: div=0.6\paperwidth
+:END:
+#+begin_export latex
+  \rightimage{\includegraphics[angle=0,origin=b,width=0.4\paperwidth]{WillsMemorialBuilding.jpg}}
+  \begin{minipage}{0.625\linewidth}
+    \raggedright
+    Smaller images are centred on the slide and can be used for interesting effects.
+    \medskip
+
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprebhenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  \end{minipage}
+#+end_export
